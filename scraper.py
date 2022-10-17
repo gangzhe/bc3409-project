@@ -103,3 +103,13 @@ timestamp = datetime.today().strftime('%Y%m%d_%H%M%S')
 filename_csv = 'tweets_' + str(numTweets) + '_' + timestamp + '.csv'
 df.to_csv(filename_csv, index=False)
 print("File saved as: ", filename_csv)
+
+
+
+#%%
+import pandas as pd
+
+sample = pd.read_csv("tweets_14031_20221017_232441.csv").sample(2000, random_state=1)
+sample.to_csv("labelled_tweets.csv", index=False)
+
+# %%
