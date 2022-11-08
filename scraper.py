@@ -72,7 +72,8 @@ def scrapeTwitter(q, df, count, numTweets, seen):
 
 df = pd.DataFrame(columns=['Cleaned Tweet'])
 numTweets = 0
-count = 1000
+# count = 1000
+count = 100
 queries = [
     # top 25 in S&P by market cap
     '$SPY', '$AAPL', '$MSFT', '$AMZN', '$TSLA', '$GOOG', '$BRK', '$META', '$UNH', '$JNJ', 
@@ -100,7 +101,8 @@ for q in queries:
 
 
 timestamp = datetime.today().strftime('%Y%m%d_%H%M%S')
-filename_csv = 'tweets_' + str(numTweets) + '_' + timestamp + '.csv'
+# filename_csv = 'tweets_' + str(numTweets) + '_' + timestamp + '.csv'
+filename_csv = 'latest_tweets.csv'
 df.to_csv(filename_csv, index=False)
 print("File saved as: ", filename_csv)
 
